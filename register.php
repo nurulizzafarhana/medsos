@@ -79,7 +79,7 @@ if (isset($_POST['daftar'])) {
                     
                     <div class="card mt-3">
                         <div class="card-body">
-                            <p>Sudah punya akun? <a href="register.php" class="text-secondary">Buat akun</a></p> 
+                            <p>Sudah punya akun? <a href="login.php" class="text-secondary">Login</a></p> 
                         </div>
                     </div>
                 </div>

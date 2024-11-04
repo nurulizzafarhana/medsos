@@ -1,4 +1,6 @@
 <?php
+ob_start();
+ob_clean();
 session_start();
 
 // jika belum login, tidak bisa mengakses page index.php
@@ -17,6 +19,29 @@ include 'koneksi.php';
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="assets/dist/css/bootstrap.min.css" />
+
+  <!-- Summernote -->
+   <link href="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote-lite.min.css" rel="stylesheet">
+
+
+  <!-- CSS -->
+  <style>
+    .cover {
+      background-size: cover;
+      background-position: center;
+      height: 200px;
+    }
+
+    .cover img {
+      background-size: cover;
+      background-position: center;
+      width: 1300px;
+      height: 240px;
+    }
+
+  </style>
+
+
   <!-- Include Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
   <link rel="stylesheet"
@@ -61,6 +86,28 @@ include 'koneksi.php';
   <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
   <!-- <script src="assets/dist/js/bootstrap.min.js"></script> -->
   <script src="app.js"></script>
+
+  <!-- Summernote -->
+   <script src="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote-lite.min.js"></script>
+
+
+   <script>
+      $('#summernote').summernote({
+        placeholder: 'Apa yang sedang hangat dibicarakan?',
+        tabsize: 2,
+        height: 120,
+        toolbar: [
+          ['style', ['style']],
+          ['font', ['bold', 'underline', 'clear']],
+          ['color', ['color']],
+          ['para', ['ul', 'ol', 'paragraph']],
+          ['table', ['table']],
+          ['insert', ['link', 'picture', 'video']],
+          ['view', ['fullscreen', 'codeview', 'help']]
+        ]
+      });
+    </script>
+
 
   <script>
     $("#id_peminjaman").change(function () {
