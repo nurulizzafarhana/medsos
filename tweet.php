@@ -55,9 +55,9 @@ $queryPosting = mysqli_query($koneksi, "SELECT * FROM tweet WHERE id_user = '$id
                         <?php echo $rowPosting['content'] ?>
                     </div>
             </div>
+            <hr class="mt-2">
         <?php endwhile ?>
 
-         <hr class="mt-2">
 
     </div>
 </div>
