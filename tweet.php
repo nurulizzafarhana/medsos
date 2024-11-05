@@ -57,6 +57,14 @@ $queryPosting = mysqli_query($koneksi, "SELECT tweet.* FROM tweet WHERE id_user=
                         <?php echo $rowPosting['content'] ?>
                     </div>
 
+                    <!-- LIKE -->
+                     <div class="status mt-1">
+                            <input type="text" id="user_id_like" value="<?php echo $rowPosting['id_user'] ?>">
+                        <button class="btn btn-danger btn-sm" onclick="toggleLike(<?php echo $rowPosting['id']; ?>)">(0)
+                            <i class="bi bi-heart"></i>
+                        </button>
+                     </div>
+
                      <!-- REP/COMMENT TWEET -->
                       <div class="flex-grow-1 ms-3">
                         <form method="POST" action="add_comment.php">
@@ -129,30 +137,25 @@ $queryPosting = mysqli_query($koneksi, "SELECT tweet.* FROM tweet WHERE id_user=
   </div>
 </div>
 
-<!-- <script>
-    document.getElementById('comment-form').addEventListener('submit', function(e) {e.preventDefault();
-        const formData = new FormData(this);
-
-        fetch("add_comment.php", {
-            method: "POST", 
-            body: formData
+<script>
+    function toggleLike(statusId) {
+        const userId = document.getElementById('user_id_like').value;
+        fetch("like_status.php", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded"
+            },
+            body: `status_id=${statusId}&user_id=${userId}`
         })
         .then(response => response.json())
         .then(data => {
-            const alertBox = document.getElementById('comment-alert');
-            if (data.status === "success") {
-                alertBox.className = "alert alert-success";
-                alertBox.innerHTML = data.message;
-
-                //bersihkan textarea
-                document.getElementById('comment_text').value = '';
-                location.reload();
-            } else {
-                alertBox.className = "alert alert-danger";
-                alertBox.innerHTML = data.message;
+            if(data.status == "liked"){
+                alert("Liked!");
+            }else if (data.status === "unliked") {
+                alert("Unliked!");
             }
-            alertBox.style.display = "block";
+            location.reload();
         })
         .catch(error => console.error("Error:", error));
-    });
-</script> -->
+    }
+</script>
