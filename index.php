@@ -73,12 +73,10 @@ include 'koneksi.php';
 
 
     <!-- Footer -->
-    <footer class="text-center border-top border-dark border-2 fixed-bottom p-3">
+    <!-- <footer class="text-center border-top border-dark border-2 fixed-bottom p-3">
       Copyright &copy; 2024 PPKD - Jakarta Pusat.
-    </footer>
-    <?php
-    require_once "inc/footer.php";
-    ?>
+    </footer> -->
+   
   </div>
 
   <script src="assets/dist/js/jquery-3.7.1.min.js"></script>
