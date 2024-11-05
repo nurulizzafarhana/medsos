@@ -39,7 +39,7 @@ $queryPosting = mysqli_query($koneksi, "SELECT * FROM tweet WHERE id_user = '$id
 
 <div class="row">
     <div class="col-sm-12 mt-2" align="right">
-        <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Tweet</button>
+        <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleTweet">Tweet</button>
     </div>
     <div class="col-sm-12 mt-3">
         <?php while($rowPosting = mysqli_fetch_assoc($queryPosting)): ?>
@@ -64,7 +64,7 @@ $queryPosting = mysqli_query($koneksi, "SELECT * FROM tweet WHERE id_user = '$id
 
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="exampleTweet" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
